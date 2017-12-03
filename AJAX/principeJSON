@@ -1,0 +1,18 @@
+stackoverflow.com/questions/715335/get-vs-post-in-ajax
+w3schools.com/php/showphp.asp?filename=demo_ajax_mysql
+
+On veut modifier la table en direct (on suppose qu'une réponse a été soumise), on récupère la réponse en JSON, qu'on transmet
+au js, qui va faire un POST (JAVASCRIPT). Ensuite elle va appeler une fonction php par paramètre url, qui va modifier la 
+base de données.
+
+--> On a alors une exécution du php en ARRIÈRE PLAN (sans réactualiser la page : comportement ASYNCHRONE)
+
+On peut donc faire de même pour interroger la base de données pour afficher des résultats (GET en JAVASCRIPT qui va 
+appeler une fonction PHP)
+
+Les fonctions appelées sont communéments appelées en URL (architecture MVC --> il sera possible d'appliquer la même
+idée si on fait du symfony).
+Ces fonctions appelées sont des fonctions appartenant au MODÈLE.
+
+Une fonction qui manipule les données peut à la limite faire un echo lorsqu'on effectue un select.
+Si on effectue un json_encode($resulat_sql), il est alors possible de récupérer le contenu en json pour l'afficher ensuite.
