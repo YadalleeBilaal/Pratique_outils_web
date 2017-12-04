@@ -2,9 +2,10 @@
 
 	function searchName()
 	{
+			setlocale(LC_CTYPE, 'fr_FR.UTF-8');
 			require("connection.php");
 			$array = array();
-			$query = 'SELECT * from informations where name like \''.htmlspecialchars($_GET['arg']).'%\'';
+			$query = 'SELECT * from informations where name like \''.$_GET['arg'].'%\'';
 			$request = $lienBDD->prepare($query);
 			$request->execute();
 
@@ -12,25 +13,10 @@
 			{	
 				while($result = $request->fetch())
 				{
-					$array['id'][] =$result['id'];
-					$array['name'][] =$result['name'];  
+					array_push($array,array("id"=>$result['id'],"name"=>utf8_encode($result['name'])));
 				}
-//////////PRÉFÉRER L'UTILISATION DE JSON POUR DE MEILLEURES PERFORMANCES !!!!
-				//UTILISER ÉGALEMENT LE FRAMEWORK HANDLEBARS POUR ÉVITER TROP DE LIGNES DE CODE JS EN DOM !!!
-				echo "<table style='border:1px solid black'>
-				<tr>
-					<th>Id</th>
-					<th>Name</th>
-				</tr>";
-				for($i=0;$i<count($array['id']);$i++)
-				{
-					echo '<tr><td>'.$array['id'][$i].'</td>';
-					echo '<td>'.utf8_encode($array['name'][$i]).'</td></tr>';
-				}
-				echo "</table>";
+				print json_encode($array, JSON_FORCE_OBJECT);
 			}
 			else
-			{
-				echo "";
-			}
+				print json_encode("None");
 	}
