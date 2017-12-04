@@ -19,13 +19,14 @@ function detectInput()
 	xmlHttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200)
 		{
-			var object = this.responseText;
+			//alert(this.responseText);
+			var object = JSON.parse(this.responseText);
 			console.log(object);
-			div.innerHTML = object;
+			// div.innerHTML = object;
 			div.style.display = "block";
 		}
 	};
-	xmlHttp.open("GET","http://localhost/AJAX_JSON/launch.php?page=control&function=runQuery&arg="+textBar[0].value,true);
+	xmlHttp.open("GET","http://localhost/AJAX_JSON/launch.php?page=control&function=runQuery&arg="+encodeURIComponent(textBar[0].value),true);
 	xmlHttp.send(null);
 
   }
@@ -34,3 +35,22 @@ function detectInput()
   	div.style.display = "none";
   }
 }
+
+function addName()
+{
+
+	if(textBar[1].value.length > 0)
+	{
+		xmlHttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+			{
+				document.getElementById("result2").innerHTML = this.responseText;
+			}
+			else
+				alert("Échec de l'ajout");
+		}
+	};
+		var argument = "ar="+encodeURIComponent(textBar[1].value);
+		xmlHttp.open("POST","http://localhost/AJAX_JSON/launch.php?page=control&function=insertName",true);
+		xmlHttp.send(argument);
+}		

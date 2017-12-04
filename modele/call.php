@@ -2,9 +2,12 @@
 
 	function searchName()
 	{
+		try{
 			require("connection.php");
 			$array = array();
 			$query = 'SELECT * from informations where name like \''.htmlspecialchars($_GET['arg']).'%\'';
+			//echo "<script>alert($query)</script>";
+			//$query= "SELECT * from informations where name='Anna'";
 			$request = $lienBDD->prepare($query);
 			$request->execute();
 
@@ -15,22 +18,18 @@
 					$array['id'][] =$result['id'];
 					$array['name'][] =$result['name'];  
 				}
-//////////PRÉFÉRER L'UTILISATION DE JSON POUR DE MEILLEURES PERFORMANCES !!!!
-				//UTILISER ÉGALEMENT LE FRAMEWORK HANDLEBARS POUR ÉVITER TROP DE LIGNES DE CODE JS EN DOM !!!
-				echo "<table style='border:1px solid black'>
-				<tr>
-					<th>Id</th>
-					<th>Name</th>
-				</tr>";
-				for($i=0;$i<count($array['id']);$i++)
-				{
-					echo '<tr><td>'.$array['id'][$i].'</td>';
-					echo '<td>'.utf8_encode($array['name'][$i]).'</td></tr>';
-				}
-				echo "</table>";
+				print json_encode($array);	
 			}
-			else
-			{
-				echo "";
-			}
+		}catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
+	}
+
+	function submitName($value)
+	{
+		require("connection.php");
+		$sql = 'INSERT INTO informations (name) values(\''.htmlspecialchars($value).'\')';
+		$request = $lienBDD->prepare($sql);
+		$request->execute();
 	}
