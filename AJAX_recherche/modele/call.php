@@ -13,7 +13,7 @@
 			{	
 				while($result = $request->fetch())
 				{
-					array_push($array,array("id"=>$result['id'],"name"=>utf8_encode($result['name'])));
+					array_push($array,array("id"=>$result['id'],"name"=>($result['name'])));
 				}
 				print json_encode($array, JSON_FORCE_OBJECT);
 			}
@@ -27,7 +27,7 @@
 		if(isset($_POST['newName']))
 		{
 			require("connection.php");
-			$query = 'INSERT INTO informations (name) values (\''.utf8_encode($_POST['newName']).'\')';
+			$query = 'INSERT INTO informations (name) values (\''.$_POST['newName'].'\')';
 			$request = $lienBDD->prepare($query);
 			$request->execute();
 		}

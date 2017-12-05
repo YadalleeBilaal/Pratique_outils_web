@@ -24,7 +24,10 @@ function detectInput()
 	xmlHttp.send(null);
   }
   else
-  	document.getElementById("result").innerHTML = "<p>Veuillez saisir un nom</p>";
+  {
+  	document.getElementById("result").style.border="none";
+  	document.getElementById("result").innerHTML = "Veuillez saisir un nom";
+  }
 }
 
 insertNewName.addEventListener('click',insertInDb);
