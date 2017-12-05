@@ -1,14 +1,6 @@
-// var request = new XMLHttpRequest();
-// request.open("GET","http://localhost/AJAX_JSON/js/file.json");
-// request.onload = function(){
-// 	var donnees = JSON.parse(request.responseText);
-// 	console.log(donnees);
-// 	alert(donnees.interests[1]);
-// };
-
-// request.send();
 var xmlHttp = new XMLHttpRequest();
 var textBar = document.getElementsByTagName("input");
+var insertNewName = document.getElementById("soumettre");
 function detectInput()
 {
   if(textBar[0].value.length > 0)
@@ -22,19 +14,36 @@ function detectInput()
 			if(this.responseText.indexOf("None") < 0)
 			{
 				var object = templateCompilation(JSON.parse(this.responseText));
-				//console.log(JSON.parse(this.responseText));
-				document.getElementById("result").innerHTML = "<br/>"+object;
+				document.getElementsByClassName("result")[0].innerHTML = "<br/>"+object;
 			}
 			else
-			{
-				document.getElementById("result").innerHTML = "<p id='error'>Nom introuvable !</p>";
-			}
-			
-			//onsole.log(object);
+				document.getElementsByClassName("result")[0].innerHTML = "<p id='error'>Nom introuvable !</p>";
 		}
 	};
-	xmlHttp.open("GET","http://localhost/AJAX_JSON/AJAX/launch.php?page=control&function=runQuery&arg="+textBar[0].value,true);
+	xmlHttp.open("GET","http://localhost/AJAX_JSON/AJAX_recherche/launch.php?page=control&function=runQuery&arg="+textBar[0].value,true);
 	xmlHttp.send(null);
-
   }
+  else
+  	document.getElementById("result").innerHTML = "<p>Veuillez saisir un nom</p>";
+}
+
+insertNewName.addEventListener('click',insertInDb);
+
+function insertInDb()
+{
+	xmlHttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200)
+		{
+			document.getElementsByClassName("result")[1].innerHTML = this.responseText;
+			document.getElementById("wait").innerHTML = "<span style='color:green'>Insertion successful</span>";
+			textBar[1].value = null;
+		}
+		else
+			document.getElementById("wait").innerHTML = "<span style='color:red'>Please wait...</span>";
+	};
+	var newName = encodeURIComponent(textBar[1].value);
+	var argument = "newName="+newName;
+	xmlHttp.open("POST","http://localhost/AJAX_JSON/AJAX_recherche/launch.php?page=control&function=addName",true);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.send(argument);
 }

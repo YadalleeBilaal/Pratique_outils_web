@@ -2,7 +2,7 @@
 
 	function searchName()
 	{
-			setlocale(LC_CTYPE, 'fr_FR.UTF-8');
+			//setlocale(LC_CTYPE, 'fr_FR.UTF-8');
 			require("connection.php");
 			$array = array();
 			$query = 'SELECT * from informations where name like \''.$_GET['arg'].'%\'';
@@ -19,4 +19,16 @@
 			}
 			else
 				print json_encode("None");
+	}
+
+	function insertName()
+	{
+		//setlocale(LC_CTYPE, 'fr_FR.UTF-8');
+		if(isset($_POST['newName']))
+		{
+			require("connection.php");
+			$query = 'INSERT INTO informations (name) values (\''.utf8_encode($_POST['newName']).'\')';
+			$request = $lienBDD->prepare($query);
+			$request->execute();
+		}
 	}
