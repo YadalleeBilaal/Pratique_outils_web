@@ -42,3 +42,63 @@
 2017-12-07T12:19:49.305020Z 0 [Note] Event Scheduler: Loaded 0 events
 2017-12-07T12:19:49.305020Z 0 [Note] C:\Users\yadallee\Desktop\Pratiques_outils_web\UwAmp\bin\database\mysql-5.7.11\bin\mysqld.exe: ready for connections.
 Version: '5.7.11'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2017-12-07T12:41:46.731129Z 0 [Note] C:\Users\yadallee\Desktop\Pratiques_outils_web\UwAmp\bin\database\mysql-5.7.11\bin\mysqld.exe: Normal shutdown
+
+2017-12-07T12:41:46.732128Z 0 [Note] Giving 1 client threads a chance to die gracefully
+2017-12-07T12:41:46.732128Z 0 [Note] Shutting down slave threads
+2017-12-07T12:41:48.733694Z 0 [Note] Forcefully disconnecting 1 remaining clients
+2017-12-07T12:41:48.734695Z 0 [Warning] C:\Users\yadallee\Desktop\Pratiques_outils_web\UwAmp\bin\database\mysql-5.7.11\bin\mysqld.exe: Forcing close of thread 5  user: 'root'
+
+2017-12-07T12:41:48.736696Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+2017-12-07T12:41:48.737701Z 0 [Note] Binlog end
+2017-12-07T12:41:48.740199Z 0 [Note] Shutting down plugin 'ngram'
+2017-12-07T12:41:48.740699Z 0 [Note] Shutting down plugin 'partition'
+2017-12-07T12:41:48.741199Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+2017-12-07T12:41:48.741700Z 0 [Note] Shutting down plugin 'ARCHIVE'
+2017-12-07T12:41:48.742200Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2017-12-07T12:41:48.743201Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+2017-12-07T12:41:48.744202Z 0 [Note] Shutting down plugin 'MyISAM'
+2017-12-07T12:41:48.745203Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+2017-12-07T12:41:48.746206Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2017-12-07T12:41:48.747206Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2017-12-07T12:41:48.748207Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2017-12-07T12:41:48.749389Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2017-12-07T12:41:48.750207Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2017-12-07T12:41:48.750707Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2017-12-07T12:41:48.751207Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2017-12-07T12:41:48.751707Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2017-12-07T12:41:48.752708Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2017-12-07T12:41:48.753209Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2017-12-07T12:41:48.753709Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2017-12-07T12:41:48.754211Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2017-12-07T12:41:48.754709Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2017-12-07T12:41:48.755209Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2017-12-07T12:41:48.755209Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2017-12-07T12:41:48.755712Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+2017-12-07T12:41:48.756210Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+2017-12-07T12:41:48.756712Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2017-12-07T12:41:48.757224Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2017-12-07T12:41:48.757724Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2017-12-07T12:41:48.758225Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2017-12-07T12:41:48.758725Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2017-12-07T12:41:48.758725Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2017-12-07T12:41:48.759226Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2017-12-07T12:41:48.759726Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2017-12-07T12:41:48.760226Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+2017-12-07T12:41:48.760726Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2017-12-07T12:41:48.761227Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+2017-12-07T12:41:48.761727Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+2017-12-07T12:41:48.761727Z 0 [Note] Shutting down plugin 'InnoDB'
+2017-12-07T12:41:48.762228Z 0 [Note] InnoDB: FTS optimize thread exiting.
+2017-12-07T12:41:48.762715Z 0 [Note] InnoDB: Starting shutdown...
+2017-12-07T12:41:48.877490Z 0 [Note] InnoDB: Dumping buffer pool(s) to C:\Users\yadallee\Desktop\Pratiques_outils_web\UwAmp\bin\database\mysql-5.7.11\data\ib_buffer_pool
+2017-12-07T12:41:48.884995Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 171207 13:41:48
+2017-12-07T12:41:50.145690Z 0 [Note] InnoDB: Shutdown completed; log sequence number 2615007
+2017-12-07T12:41:50.145690Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2017-12-07T12:41:50.145690Z 0 [Note] Shutting down plugin 'MEMORY'
+2017-12-07T12:41:50.145690Z 0 [Note] Shutting down plugin 'CSV'
+2017-12-07T12:41:50.145690Z 0 [Note] Shutting down plugin 'sha256_password'
+2017-12-07T12:41:50.145690Z 0 [Note] Shutting down plugin 'mysql_native_password'
+2017-12-07T12:41:50.145690Z 0 [Note] Shutting down plugin 'binlog'
+2017-12-07T12:41:50.145690Z 0 [Note] C:\Users\yadallee\Desktop\Pratiques_outils_web\UwAmp\bin\database\mysql-5.7.11\bin\mysqld.exe: Shutdown complete
+
