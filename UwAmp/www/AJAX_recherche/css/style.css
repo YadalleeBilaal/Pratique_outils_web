@@ -1,0 +1,38 @@
+.result:nth-child(5) table
+{
+	border:1px solid black;
+	border-collapse: collapse;
+}
+
+.result:nth-child(5) th,td{
+	text-align: center;
+	border:1px solid black;
+}
+
+#error
+{
+	color:red;
+}
+
+#soumettre
+{
+	display: inline-block;
+	background-color: darkblue;
+	color:white;
+	cursor: pointer;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	padding: 3px 6px;
+}
+
+#soumettre:hover
+{
+	background-color: yellow;
+	color:darkblue;
+}
+
+#soumettre:active
+{
+	color:yellow;
+	background-color: darkblue;
+}
